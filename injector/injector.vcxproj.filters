@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\AIApi">
+      <UniqueIdentifier>{2e48b22c-b37f-4a3b-b7f9-c031b4ba3606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\protocol">
+      <UniqueIdentifier>{92295395-7c6f-477a-a90d-d1cb47556f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\protocol\game_message">
+      <UniqueIdentifier>{566d8814-1ec3-4ae1-9cb6-a20efeb4e41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks">
+      <UniqueIdentifier>{bead1aa8-bf11-4694-9dfe-309ed53f7842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{baeca883-6b5e-4d07-866e-c9a95e05f8e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\poker">
+      <UniqueIdentifier>{3e0b5100-1ae8-4904-b646-d1cab8735e5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spoofing">
+      <UniqueIdentifier>{d3ba7431-5e4b-491b-a70a-f306b8476f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\automation">
+      <UniqueIdentifier>{cb8cf858-191b-469c-93f6-fb7c6d2f5e2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIApi\ActionType.hpp">
+      <Filter>Source Files\AIApi</Filter>
+    </ClInclude>
+    <ClInclude Include="AIApi\Client.hpp">
+      <Filter>Source Files\AIApi</Filter>
+    </ClInclude>
+    <ClInclude Include="AIApi\Protocol.hpp">
+      <Filter>Source Files\AIApi</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\board_cards.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\deal_hero_cards.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\deal_hold_cards.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\end_game.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\enter_table.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\hero_turn.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\next_turn.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\pot_rake_update.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\pot_update.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\seat_update.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\start_game.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\action.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\config.hpp">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\websocket.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utils.hpp">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="poker\table_state.hpp">
+      <Filter>Source Files\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="poker\table.hpp">
+      <Filter>Source Files\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="poker\table_controller.hpp">
+      <Filter>Source Files\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\protocol_header.hpp">
+      <Filter>Source Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\logging.hpp">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\internal_functions.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hook.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_packet.hpp">
+      <Filter>Source Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="spoofing\profile.hpp">
+      <Filter>Source Files\spoofing</Filter>
+    </ClInclude>
+    <ClInclude Include="spoofing\spoofer.hpp">
+      <Filter>Source Files\spoofing</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\automation.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\lobby.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\stream_buffer.hpp">
+      <Filter>Source Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\stream_reader.hpp">
+      <Filter>Source Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\lobby_data.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\join.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\players.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\table_option.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\buy_in.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\login_response.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\take_seat.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\toggle_waitlist.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\poker_table.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\widget_handler.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\login_page.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\messagebox.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\buyin_request.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\game_message\budget_update.hpp">
+      <Filter>Source Files\protocol\game_message</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\lobby_types.hpp">
+      <Filter>Source Files\automation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AIApi\Client.cpp">
+      <Filter>Source Files\AIApi</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\hook.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\websocket.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\logging.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="poker\table.cpp">
+      <Filter>Source Files\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="poker\table_controller.cpp">
+      <Filter>Source Files\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="poker\table_state.cpp">
+      <Filter>Source Files\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="spoofing\profile.cpp">
+      <Filter>Source Files\spoofing</Filter>
+    </ClCompile>
+    <ClCompile Include="spoofing\spoofer.cpp">
+      <Filter>Source Files\spoofing</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\automation.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+    <ClCompile Include="protocol\stream_reader.cpp">
+      <Filter>Source Files\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\poker_table.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\login_page.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\messagebox.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\lobby.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\widget_handler.cpp">
+      <Filter>Source Files\automation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config.json" />
+  </ItemGroup>
+</Project>

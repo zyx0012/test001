@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <None Include="Config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f1a90905-36f2-4413-b20d-1d0550595064}</ProjectGuid>
+    <RootNamespace>injector</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>INJECTOR_EXPORTS;_WINDOWS;_USRDLL;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>fmt.lib;spdlog.lib;minhook.x64.lib;Qt6Core.lib;Qt6Widgets.lib;Qt6Gui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;INJECTOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>fmt.lib;spdlog.lib;minhook.x64.lib;Qt6Core.lib;Qt6Widgets.lib;Qt6Gui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AIApi\Client.cpp" />
+    <ClCompile Include="automation\automation.cpp" />
+    <ClInclude Include="automation\automation.hpp">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClCompile Include="automation\lobby.cpp" />
+    <ClCompile Include="automation\login_page.cpp" />
+    <ClCompile Include="automation\messagebox.cpp" />
+    <ClCompile Include="automation\poker_table.cpp" />
+    <ClCompile Include="automation\widget_handler.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="hooks\hook.cpp" />
+    <ClCompile Include="hooks\websocket.cpp" />
+    <ClCompile Include="poker\table.cpp" />
+    <ClCompile Include="poker\table_controller.cpp" />
+    <ClCompile Include="poker\table_state.cpp" />
+    <ClCompile Include="protocol\stream_reader.cpp" />
+    <ClCompile Include="spoofing\profile.cpp" />
+    <ClCompile Include="spoofing\spoofer.cpp" />
+    <ClCompile Include="utils\logging.cpp" />
+    <ClCompile Include="utils\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIApi\ActionType.hpp" />
+    <ClInclude Include="AIApi\Client.hpp" />
+    <ClInclude Include="AIApi\Protocol.hpp" />
+    <ClInclude Include="automation\lobby_types.hpp" />
+    <ClInclude Include="automation\messagebox.hpp" />
+    <ClInclude Include="automation\lobby.hpp" />
+    <ClInclude Include="automation\login_page.hpp" />
+    <ClInclude Include="automation\poker_table.hpp" />
+    <ClInclude Include="automation\widget_handler.hpp" />
+    <ClInclude Include="hooks\hook.hpp" />
+    <ClInclude Include="hooks\internal_functions.hpp" />
+    <ClInclude Include="hooks\websocket.hpp" />
+    <ClInclude Include="poker\table.hpp" />
+    <ClInclude Include="poker\table_controller.hpp" />
+    <ClInclude Include="poker\table_state.hpp" />
+    <ClInclude Include="protocol\game_message\action.hpp" />
+    <ClInclude Include="protocol\game_message\board_cards.hpp" />
+    <ClInclude Include="protocol\game_message\budget_update.hpp" />
+    <ClInclude Include="protocol\game_message\buyin_request.hpp" />
+    <ClInclude Include="protocol\game_message\buy_in.hpp" />
+    <ClInclude Include="protocol\game_message\deal_hero_cards.hpp" />
+    <ClInclude Include="protocol\game_message\deal_hold_cards.hpp" />
+    <ClInclude Include="protocol\game_message\end_game.hpp" />
+    <ClInclude Include="protocol\game_message\enter_table.hpp" />
+    <ClInclude Include="protocol\game_message\hero_turn.hpp" />
+    <ClInclude Include="protocol\game_message\join.hpp" />
+    <ClInclude Include="protocol\game_message\lobby_data.hpp" />
+    <ClInclude Include="protocol\game_message\login_response.hpp" />
+    <ClInclude Include="protocol\game_message\next_turn.hpp" />
+    <ClInclude Include="protocol\game_message\players.hpp" />
+    <ClInclude Include="protocol\game_message\pot_rake_update.hpp" />
+    <ClInclude Include="protocol\game_message\pot_update.hpp" />
+    <ClInclude Include="protocol\game_message\seat_update.hpp" />
+    <ClInclude Include="protocol\game_message\start_game.hpp" />
+    <ClInclude Include="protocol\game_message\table_option.hpp" />
+    <ClInclude Include="protocol\game_message\take_seat.hpp" />
+    <ClInclude Include="protocol\game_message\toggle_waitlist.hpp" />
+    <ClInclude Include="protocol\game_packet.hpp" />
+    <ClInclude Include="protocol\protocol_header.hpp" />
+    <ClInclude Include="protocol\stream_buffer.hpp" />
+    <ClInclude Include="protocol\stream_reader.hpp" />
+    <ClInclude Include="spoofing\profile.hpp" />
+    <ClInclude Include="spoofing\spoofer.hpp" />
+    <ClInclude Include="utils\config.hpp" />
+    <ClInclude Include="utils\logging.hpp" />
+    <ClInclude Include="utils\utils.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
